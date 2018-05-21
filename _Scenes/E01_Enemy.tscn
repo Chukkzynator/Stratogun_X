@@ -10,21 +10,18 @@
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
-"name": "New Anim",
+"name": "default",
 "speed": 5.0
 } ]
 
 [node name="Enemy" instance=ExtResource( 1 )]
 
-[node name="aspr_Enemy" parent="kin_Enemy" index="0"]
+[node name="aspr_Enemy" parent="." index="0"]
 
 frames = SubResource( 1 )
-animation = "New Anim"
-frame = 1
 
-[node name="col_Enemy" parent="kin_Enemy" index="1"]
+[node name="rayleft_Enemy" parent="." index="3"]
 
-scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
 
 

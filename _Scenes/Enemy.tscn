@@ -2,39 +2,38 @@
 
 [ext_resource path="res://_Scenes/kin_Enemy.gd" type="Script" id=1]
 
-[node name="Enemy" type="Node2D" index="0"]
-
-[node name="kin_Enemy" type="KinematicBody2D" parent="." index="0"]
+[node name="Enemy" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="aspr_Enemy" type="AnimatedSprite" parent="kin_Enemy" index="0"]
+[node name="aspr_Enemy" type="AnimatedSprite" parent="." index="0"]
 
-scale = Vector2( 3, 3 )
+scale = Vector2( 2, 2 )
 animation = "default"
 playing = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="col_Enemy" type="CollisionShape2D" parent="kin_Enemy" index="1"]
+[node name="col_Enemy" type="CollisionShape2D" parent="." index="1"]
 
-[node name="rayright_Enemy" type="RayCast2D" parent="kin_Enemy" index="2"]
+_sections_unfolded = [ "Transform" ]
 
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 30, 0 )
-collision_mask = 1
-
-[node name="rayleft_Enemy" type="RayCast2D" parent="kin_Enemy" index="3"]
+[node name="rayright_Enemy" type="RayCast2D" parent="." index="2"]
 
 enabled = true
 exclude_parent = true
-cast_to = Vector2( -30, 0 )
+cast_to = Vector2( 8, 0 )
 collision_mask = 1
 
-[connection signal="charge" from="kin_Enemy" to="kin_Enemy" method="_on_kin_Enemy_charge"]
+[node name="rayleft_Enemy" type="RayCast2D" parent="." index="3"]
+
+enabled = true
+exclude_parent = true
+cast_to = Vector2( -8, 0 )
+collision_mask = 1
 
 
