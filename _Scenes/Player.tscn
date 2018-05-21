@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://_Scenes/Player.gd" type="Script" id=1]
+[ext_resource path="res://InvaderSpritest.png" type="Texture" id=2]
+
+[node name="Player" type="KinematicBody2D"]
+
+position = Vector2( 257, 488 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ 257.0 ]
+}
+speed = 200
+
+[node name="spr_Player" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 2, 240, 28, 16 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="col_Player" type="CollisionPolygon2D" parent="." index="1"]
+
+visible = false
+build_mode = 0
+polygon = PoolVector2Array( 0, -25, 42, 24, -42, 24 )
+
+[node name="rayright_Player" type="RayCast2D" parent="." index="2"]
+
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 40, 0 )
+collision_mask = 1
+
+[node name="rayleft_Player" type="RayCast2D" parent="." index="3"]
+
+enabled = true
+exclude_parent = true
+cast_to = Vector2( -40, 0 )
+collision_mask = 1
+
+
